@@ -1,0 +1,27 @@
+.checkBox_span{
+    color: #2668ee;
+    font-weight: 500;
+}
+.checkBox_span-padding{
+    margin-top: 20px;
+}
+.checkBox{
+    padding-left: 23% ;
+}
+.title{
+    padding-left: 23%;
+    padding-top: 3%;
+}
+.fly{
+    margin-top: 25px;
+    padding-top: 24px;
+}
+li{
+    list-style: none;
+}
+.transfer_box{
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    width: 200px;
+    margin: 0px 0px 10px 0px;
+    text-align: center;
+}

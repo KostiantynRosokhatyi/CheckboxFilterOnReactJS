@@ -1,0 +1,44 @@
+{
+  "tickets": [
+    {
+      "id": "cc222da8-0e13-492e-9c0b-dac7b3890d8b",
+      "transfers": 3
+    },
+    {
+      "id": "6d34e96a-9a10-43e5-b99b-d37c67d0e742",
+      "transfers": 1
+    },
+    {
+      "id": "fdc3dfe0-c664-4872-b6d6-64874208451d",
+      "transfers": 0
+    },
+    {
+      "id": "768d166f-e7e7-4ba5-b627-98ae03d7bdb9",
+      "transfers": 2
+    },
+    {
+      "id": "339852a4-c5e5-4bbf-b8a4-726eee8633f0",
+      "transfers": 3
+    },
+    {
+      "id": "cbd43f45-d2ba-46dd-b271-d30e19033a97",
+      "transfers": 3
+    },
+    {
+      "id": "5e7fa137-0849-45c5-ab93-15e447d9b6cc",
+      "transfers": 1
+    },
+    {
+      "id": "056a80f8-aba8-48a0-bec1-787472285a97",
+      "transfers": 0
+    },
+    {
+      "id": "21052b3c-e9bc-4eae-9b08-4b231237f98d",
+      "transfers": 1
+    },
+    {
+      "id": "659cb1b1-fe66-408b-ac90-c4f1ccb446ed",
+      "transfers": 0
+    }
+  ]
+}
