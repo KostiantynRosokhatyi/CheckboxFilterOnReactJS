@@ -12,6 +12,7 @@ function App() {
     const d = state
 
     function onChange(value) {
+
         setState(<Filters value={value}/>)
     }
 
@@ -24,11 +25,7 @@ function App() {
             </Row>
             <Row justify='center'>
                 <Col span={8} className='checkBox'>
-                    <Checkbox onChange={function(){
-                        if(this.checked){
-                            onChange(4)
-                        }
-                    } }>All </Checkbox> <br/>
+                    <Checkbox onChange={() => onChange(4)}>All </Checkbox> <br/>
                     <Checkbox onChange={() => onChange(0)}>NO TRANSFERS </Checkbox> <br/>
                     <Checkbox onChange={() => onChange(1)}>1 TRANSFER </Checkbox> <br/>
                     <Checkbox onChange={() => onChange(2)}>2 TRANSFER </Checkbox> <br/>
