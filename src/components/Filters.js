@@ -1,13 +1,13 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import data from '../data.json'
-import Ticket from "./Ticket";
+
+import FlySVG from "./FlySVG";
 
 
 function Filters(props) {
-    const {value, a} = props
+    const {value, Filter} = props
     const [state, setState] = useState(data);
-    const uniqueTransfers = [...new Set(Object.keys(state.tickets).map(item => state.tickets[item].transfers))]
-
+    /*    const uniqueTransfers = [...new Set(Object.keys(state.tickets).map(item => state.tickets[item].transfers))]*/
     function name(value) {
         let name2
         if (value === 1 || value === 0) {
@@ -18,28 +18,28 @@ function Filters(props) {
         return name2
     }
 
-    function checkValue(value, a) {
-        if (value === 4) {
-            return Object.keys(state.tickets).map(item => <div
-                key={state.tickets[item].id}
-                className="transfer_box">{state.tickets[item].transfers} {name(state.tickets[item].transfers)}
-                <Ticket/>
-            </div>)
-        } else {
-            return Object.keys(data.tickets)
-                .filter(key => data.tickets[key].transfers === value)
-                .map((key, index) => {
-                    return <div key={key} className='transfer_box'>
-                        <span>{data.tickets[key].transfers}{name(value)}</span>
-                        <Ticket/>
-                    </div>
-                })
+    function checkValue(value) {
+        for(let i = 0;value.length;i++){
+            if (value[i] == 4) {
+                return Object.keys(state.tickets).map(item => <div key={state.tickets[item].id}
+                                                                   className="transfer_box">{state.tickets[item].transfers} {name(state.tickets[item].transfers)}
+                    <FlySVG/></div>)
+            } else {
+                return Object.keys(data.tickets)
+                    .filter(key => data.tickets[key].transfers == value[i])
+                    .map((key, index) => {
+                        return <div key={key} className='transfer_box'>
+                            <span>{data.tickets[key].transfers}</span>
+                            <FlySVG/>
+                        </div>
+                    })
+            }
         }
-    }
 
+    }
     return (
         <div>
-            {console.log(uniqueTransfers)}
+            {/*{console.log(uniqueTransfers)}*/}
             {checkValue(value)}
         </div>
     )

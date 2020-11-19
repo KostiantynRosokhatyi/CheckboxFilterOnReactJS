@@ -1,20 +1,20 @@
-import React, {useEffect, useState} from 'react'
-import {Row, Col, Typography, Checkbox} from 'antd'
+import React, { useState} from 'react'
+import {Row, Col} from 'antd'
 import Title from "antd/es/typography/Title";
 import 'antd/dist/antd.css';
 import '../style.css'
+import data from '../data.json'
 import Filters from "./Filters";
-
+import config from "../config.json"
+import Ticket from "./Ticket";
+import FlySVG from "./FlySVG";
 
 function App() {
-    /*const [stateTicket, setTicket] = useState(Ticket)*/
-    const [state, setState] = useState(<Filters value={4}/>)
-    const d = state
-
-    function onChange(value) {
-
-        setState(<Filters value={value}/>)
-    }
+    const array =[]
+  /*  const uniqueTransfers = [...new Set(Object.keys(data.tickets).map(item => data.tickets[item].transfers))]*/
+    const [FilterTickets, setFilterTickets] = useState([Object.keys(data.tickets).map(item =>
+        <div key={data.tickets[item].id} className="transfer_box">{data.tickets[item].transfers} <FlySVG /></div>)])
+    const [Filter, setFilter] = useState([])
 
     return (
         <div>
@@ -25,11 +25,7 @@ function App() {
             </Row>
             <Row justify='center'>
                 <Col span={8} className='checkBox'>
-                    <Checkbox onChange={() => onChange(4)}>All </Checkbox> <br/>
-                    <Checkbox onChange={() => onChange(0)}>NO TRANSFERS </Checkbox> <br/>
-                    <Checkbox onChange={() => onChange(1)}>1 TRANSFER </Checkbox> <br/>
-                    <Checkbox onChange={() => onChange(2)}>2 TRANSFER </Checkbox> <br/>
-                    <Checkbox onChange={() => onChange(3)}>3 TRANSFER </Checkbox>
+                    <Ticket config={config} onChange={onChange}/>
                 </Col>
                 <Col span={4} className='checkBox_span-padding'>
                     <span className='checkBox_span'>ONLY</span> <br/>
@@ -38,11 +34,26 @@ function App() {
                     <span className='checkBox_span'>ONLY</span>
                 </Col>
                 <Col span={12} align='start'>
-                    {state}
+                    {FilterTickets}
                 </Col>
             </Row>
         </div>
     )
+    function onChange(value) {
+        setFilter(DeleteOrAdd (value, Filter))
+
+        array.push(<Filters Filter={Filter} value={Filter}/>)
+        setFilterTickets(array)
+    }
+    function DeleteOrAdd (value, array){
+        const someData = array
+        if(!(someData.includes(value))){
+            someData.push(value)
+        }else{
+            someData.splice(someData.indexOf(value, 0), 1)
+        }
+        return someData
+    }
 }
 
 export default App
