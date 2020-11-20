@@ -1,6 +1,6 @@
 import React from 'react'
 import '../style.css'
-import {Checkbox, Col} from "antd";
+import {Checkbox} from "antd";
 
 function BoxFilter(props) {
     const {config, onChange, filters} = props
