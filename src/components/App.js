@@ -1,21 +1,57 @@
-import React, { useState} from 'react'
+import React, {useState} from 'react'
 import {Row, Col} from 'antd'
 import Title from "antd/es/typography/Title";
 import 'antd/dist/antd.css';
 import '../style.css'
 import data from '../data.json'
-import Filters from "./Filters";
 import config from "../config.json"
-import Ticket from "./Ticket";
+import BoxFilter from "./BoxFilter";
 import FlySVG from "./FlySVG";
 
 function App() {
-    const array =[]
-  /*  const uniqueTransfers = [...new Set(Object.keys(data.tickets).map(item => data.tickets[item].transfers))]*/
-    const [FilterTickets, setFilterTickets] = useState([Object.keys(data.tickets).map(item =>
-        <div key={data.tickets[item].id} className="transfer_box">{data.tickets[item].transfers} <FlySVG /></div>)])
-    const [Filter, setFilter] = useState([])
+    const [tickets] = useState(data.tickets)
+    const [filters, setFilters] = useState([1, 2, 3, 0, 4])
+    const [filterTickets, setFilterTickets] = useState(data.tickets)
 
+    const onChange = (value) => {
+        console.log(value)
+        if (value === 4) {
+            if (filters.includes(value)) {
+                console.log(filters.includes(value))
+                setFilters([])
+            } else {
+                console.log(!filters.includes(value))
+                setFilters([1, 2, 3, 0, 4])
+                setFilterTickets(tickets)
+            }
+        } else {
+            const newFilter = NewFilters(value)
+            const newTickets = tickets.filter(item => newFilter.includes(item.transfers))
+            setFilterTickets(newTickets)
+            setFilters(newFilter)
+        }
+    }
+
+    const NewFilters = (value) => {
+
+        if (!(filters.includes(value))) {
+            return [...filters, value]
+        } else {
+            return filters.filter(item => item !== value)
+        }
+    }
+    const ApplyOnlyFilter = (value) => {
+        setFilters(value)
+        const filteredTickets = tickets.filter(item => item.transfers === value)
+        setFilterTickets(filteredTickets)
+    }
+    const SetNameOfTransfers = (value) => {
+        if (value === 1) {
+            return 'Transfer'
+        } else {
+            return 'Transfers'
+        }
+    }
     return (
         <div>
             <Row>
@@ -25,35 +61,25 @@ function App() {
             </Row>
             <Row justify='center'>
                 <Col span={8} className='checkBox'>
-                    <Ticket config={config} onChange={onChange}/>
+                    <BoxFilter ApplyOnlyFilter={ApplyOnlyFilter} config={config} onChange={onChange} filters={filters}/>
                 </Col>
                 <Col span={4} className='checkBox_span-padding'>
                     <span className='checkBox_span'>ONLY</span> <br/>
                     <span className='checkBox_span'>ONLY</span> <br/>
                     <span className='checkBox_span'>ONLY</span> <br/>
-                    <span className='checkBox_span'>ONLY</span>
+                    <span className='checkBox_span'>ONLY</span> <br/>
                 </Col>
                 <Col span={12} align='start'>
-                    {FilterTickets}
+                    {filterTickets.map(item => {
+                        return <div key={item.id}>
+                            <div className="transfer_box">
+                                <span>{item.transfers} {SetNameOfTransfers(item.transfers)}</span> <br/> <FlySVG/></div>
+                        </div>
+                    })}
                 </Col>
             </Row>
         </div>
     )
-    function onChange(value) {
-        setFilter(DeleteOrAdd (value, Filter))
-
-        array.push(<Filters Filter={Filter} value={Filter}/>)
-        setFilterTickets(array)
-    }
-    function DeleteOrAdd (value, array){
-        const someData = array
-        if(!(someData.includes(value))){
-            someData.push(value)
-        }else{
-            someData.splice(someData.indexOf(value, 0), 1)
-        }
-        return someData
-    }
 }
 
 export default App

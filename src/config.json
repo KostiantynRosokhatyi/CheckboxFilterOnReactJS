@@ -1,23 +1,27 @@
 [
   {
-    "id": "sfdssdf456756765gdfg",
+    "id": "3546354635463456",
     "text": "ALL",
-    "value": "4"
+    "value": 4
   },
-  { "id": "sfsdfgd345743685sdfg",
+  {
+    "id": "354635463633456",
     "text": "No transfers",
-    "value": "0"
+    "value": 0
   },
-  { "id": "sfd5698ser678ddfg",
+  {
+    "id": "3546345654",
     "text": "1 transfer",
-    "value": "1"
+    "value": 1
   },
-  { "id": "sfdser36354677ttdfg",
+  {
+    "id": "356356253654635",
     "text": "2 transfer",
-    "value": "2"
+    "value": 2
   },
-  { "id": "sfdert356784578sdfg",
+  {
+    "id": "3546786578657",
     "text": "3 transfer",
-    "value": "3"
+    "value": 3
   }
 ]

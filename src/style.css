@@ -1,28 +1,31 @@
-.checkBox_span{
+.checkBox_span {
     color: #2668ee;
     font-weight: 500;
 }
-.checkBox_span-padding{
-    margin-top: 20px;
+
+.checkBox_span-padding {
+    margin-top: 25px;
 }
-.checkBox{
-    padding-left: 23% ;
+
+.checkBox {
+    padding-left: 23%;
 }
-.title{
+
+.title {
     padding-left: 23%;
     padding-top: 3%;
 }
-.fly{
+
+.fly {
     margin-top: 25px;
     padding-top: 24px;
 }
-li{
-    list-style: none;
-    text-transform: uppercase;
-}
-.transfer_box{
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
-    width: 200px;
+
+.transfer_box {
+    box-shadow: -1px 7px 6px -5px #333;
+    border-radius: 10px;
+    width: 300px;
+    height: 50px;
     margin: 0px 0px 10px 0px;
     text-align: center;
 }
