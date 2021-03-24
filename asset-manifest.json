@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/CheckboxFilterOnReactJS/static/css/main.ad02ce35.chunk.css",
+    "main.js": "/CheckboxFilterOnReactJS/static/js/main.6a409ef2.chunk.js",
+    "main.js.map": "/CheckboxFilterOnReactJS/static/js/main.6a409ef2.chunk.js.map",
+    "runtime-main.js": "/CheckboxFilterOnReactJS/static/js/runtime-main.646d89c7.js",
+    "runtime-main.js.map": "/CheckboxFilterOnReactJS/static/js/runtime-main.646d89c7.js.map",
+    "static/css/2.a10ec74d.chunk.css": "/CheckboxFilterOnReactJS/static/css/2.a10ec74d.chunk.css",
+    "static/js/2.b3bb908e.chunk.js": "/CheckboxFilterOnReactJS/static/js/2.b3bb908e.chunk.js",
+    "static/js/2.b3bb908e.chunk.js.map": "/CheckboxFilterOnReactJS/static/js/2.b3bb908e.chunk.js.map",
+    "index.html": "/CheckboxFilterOnReactJS/index.html",
+    "static/css/2.a10ec74d.chunk.css.map": "/CheckboxFilterOnReactJS/static/css/2.a10ec74d.chunk.css.map",
+    "static/css/main.ad02ce35.chunk.css.map": "/CheckboxFilterOnReactJS/static/css/main.ad02ce35.chunk.css.map",
+    "static/js/2.b3bb908e.chunk.js.LICENSE.txt": "/CheckboxFilterOnReactJS/static/js/2.b3bb908e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.646d89c7.js",
+    "static/css/2.a10ec74d.chunk.css",
+    "static/js/2.b3bb908e.chunk.js",
+    "static/css/main.ad02ce35.chunk.css",
+    "static/js/main.6a409ef2.chunk.js"
+  ]
+}
